@@ -1,8 +1,8 @@
-// Função para extrair informações de um produto de uma página web
+// Função para extrair informações de um produto de uma página web.
 function scrapeProductInfo(url) {
     let productInfo = {}; // Objeto onde armazenaremos as informações extraídas
     
-    // Extrai as informações do produto usando seletor CSS específico
+    // Extrai as informações do produto usando seletor CSS específico, seletor copiado usando: "Copiar caminho JS" da devTools do Chrome.
     let produtoElement = document.querySelector("#product > div > div > div.card-section > div > div.medium-8.small-12.columns > h2");
     productInfo['Produto'] = produtoElement ? produtoElement.innerText : "Informação não disponível";
 
@@ -24,11 +24,11 @@ function scrapeProductInfo(url) {
     return productInfo; // Retorna o objeto contendo as informações extraídas
 }
 
-// Função para extrair informações de pontuação de um produto de uma página web
+// Função para extrair informações de pontuação do produto:
 function scrapeScores(url) {
     let scores = {}; // Objeto onde armazenaremos as informações de pontuação extraídas
     
-    // Extrai informações de pontuação usando seletor CSS específico
+    // Extrai informações de pontuação usando seletor CSS específico, seletor copiado usando: "Copiar caminho JS" da devTools do Chrome.
     let nutriScoreElement = document.querySelector("#attributes_grid > li:nth-child(1) > a > div > div > div.attr_text > h4");
     scores['Nutri Score'] = nutriScoreElement ? nutriScoreElement.innerText : "Informação não disponível";
 
